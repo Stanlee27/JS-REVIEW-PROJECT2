@@ -9,7 +9,7 @@ const todoInput = document.getElementById('todo-input');
 const todoList = document.getElementById('todo-list');
 
 function renderTodos() {
-    todolist.innerHTML = '';
+    todoList.innerHTML = '';
     todos.forEach((todo, index)=> {
         const li =document.createElement('li');
         li.className = 'todo-item';
@@ -35,7 +35,7 @@ function addTodo(event) {
 
 //Function to edit a todo
 function editTodo(index) {
-    const updatedTodo = promt('Edit your todo:', todos[index]);
+    const updatedTodo = prompt('Edit your todo:', todos[index]);
     if (updatedTodo !== null) {
         todos[index] = updatedTodo.trim();
         renderTodos();
