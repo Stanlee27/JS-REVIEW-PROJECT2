@@ -6,7 +6,7 @@ let todos = [];
 //DOM Elements
 const todoForm = document.getElementById('todo-form');
 const todoInput = document.getElementById('todo-input');
-const todolist = document.getElementById('todo-list');
+const todoList = document.getElementById('todo-list');
 
 function renderTodos() {
     todolist.innerHTML = '';
@@ -16,16 +16,16 @@ function renderTodos() {
         li.innerHTML = `
             <span>${todo}</span>
             <button onclick="editTodo(${index})">Edit</button>
-            <button onclick="deleteTodo(${index})">Edit</button>
+            <button onclick="deleteTodo(${index})">Delete</button>
         `;
-        todolist.appendChild(li);
-    })
+        todoList.appendChild(li);
+    });
 }
 
 //Function to add a new todo
 function addTodo(event) {
     event.preventDefault();
-    const newTodo = todoInput.ariaValueMax.trim();
+    const newTodo = todoInput.value.trim();
     if (newTodo) {
         todos.push(newTodo);
         todoInput.value = '';
